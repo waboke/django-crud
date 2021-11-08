@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a class="btn btn-primary" href=" {% url 'add-user' %} ">add New User</a></li>
+   
+  </ol>
+</nav>
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">S/No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">department</th>
+      <th scope="col">gender</th>
+      <th scope="col">address</th>
+      <th scope="col">lang</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for user in usermodel %}
+  <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.mobile }}</td>
+      <td>{{ user.department }}</td>
+      <td>{{ user.gender }}</td>
+      <td>{{ user.address }}</td>
+      <td>{{ user.language }}</td>
+      
+       <td><a href="#" class="btn btn-info">Edit</a></td>
+        <td><a href="#" class="btn btn-danger">delete</a></td>
+    </tr>
+  {% endfor %}
+    
+    
+  </tbody>
+</table>
+
+
+
+
+{% endblock content %}

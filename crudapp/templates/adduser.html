@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a class="btn btn-primary" href=" {% url 'home' %} ">View Users</a></li>
+   
+  </ol>
+</nav>
+<form   method="POST" action=" {% url 'add-user' %} " class="row g-3">
+{% csrf_token %}
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">{{ form.name.label }}</label>
+    {{ form.name }}
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label"> {{ form.email.label }}</label>
+   {{ form.email }}
+  </div>
+  <div class="col-6">
+    <label for="inputAddress" class="form-label"> {{ form.mobile.label }}</label>
+    {{ form.mobile }}
+  </div>
+  <div class="col-6">
+    <label for="inputAddress2" class="form-label">{{ form.department.label }}</label>
+   {{ form.department }}
+  </div>
+  <div class="col-md-4">
+    <label for="inputCity" class="form-label">{{ form.gender.label }}</label>
+   {{ form.gender }}
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">{{ form.address.label }}</label>
+    {{ form.address }}
+  </div>
+  <div class="col-md-4">
+    <label for="inputZip" class="form-label">{{ form.language.label }}</label>
+    {{ form.language }}
+  </div>
+  
+  <div class="col-12">
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </div>
+</form>
+
+
+
+
+{% endblock content %}
