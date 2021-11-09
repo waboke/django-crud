@@ -5,7 +5,7 @@
   <div class="card-header ">Add New User</div>
   <div class="card-body text-success">
     <h5 class="card-title "><a class="btn btn-primary" href=" {% url 'home' %} ">View Users</a></li></h5>
-    <form   method="POST" action=" {% url 'add-user' %} " class="row g-3">
+    <form   method="POST" action=" {% url 'update' get_user_data.id %} " class="row g-3">
 {% csrf_token %}
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">{{ form.name.label }}</label>
@@ -43,20 +43,14 @@
   </div>
   
   <div class="col-12 mt-4">
-    <input type="submit" class="btn btn-primary" value="Submit">
+   
+        <button type="submit" class="btn btn-outline-primary">Update Data</button>
+        <button type="reset" class="btn btn-outline-warning">Reset Data</button>
+                 
   </div>
 </form>
-
-
 </div>
-
-
   </div>
-  
-
-
-
-
 {% endblock content %}
 
 
